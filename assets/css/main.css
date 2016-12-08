@@ -1,0 +1,27 @@
+.input-msg {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  padding: 0px;
+  margin: 0px;
+  height: 32px;
+  background: transparent;
+  margin-top: -2px;
+  border-radius: 2px;
+  margin-left: -6px;
+  width: 258px;
+}
+
+#msg-top, #iphone #center #msgs-wrapper:hover {
+  cursor: default;
+}
+
+#text-send-result {
+  cursor: not-allowed;
+}
+
+.sendable, .sendable:hover {
+  cursor: pointer !important;
+  color: #0079ff !important;
+}

@@ -1,0 +1,128 @@
+<html>
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"</script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"</script>
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/css/app.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen">
+</head>
+<body>
+	<div id="center-panel">
+		<div id="iphone">
+			<div id="top"></div>
+	    <div id="center">
+	      <div id="msg">
+	        <div id="msg-top">
+						<div class="col-md-4 col-xs-4">
+	            <div id="connection" class="pull-left">
+	              <img src="assets/img/3g-3.png" id="signal-img">
+	            </div>
+	            <div id="operator" class="pull-left">
+	              <span id="operator-result" class="result">Verizon</span>
+	            </div>
+	            <div id="connection-type" class="pull-left">
+								<div id="connection-type-wifi-wrapper">
+	                <img src="assets/img/wifi-3.png" id="connection-type-wifi">
+	              </div>
+	            </div>
+		        </div>
+		        <div class="col-md-4 col-xs-4 text-center">
+		          <div id="clock">
+								<!-- update with current time -->
+		            <span id="clock-result" class="result">9:41 AM</span>
+		          </div>
+		        </div>
+		        <div class="col-md-4 col-xs-4 text-center">
+		          <div class="pull-right">
+		            <div id="battery">
+		              <div id="battery-percent"></div>
+		            </div>
+		          </div>
+		          <div class="pull-right m-r-xs">
+		            <div id="battery-percent-number-container"><span id="battery-percent-number">80</span> %</div>
+		          </div>
+		        </div>
+
+		      	<div class="clearfix"></div>
+		        <div class="col-md-4 col-xs-4" id="txt-messages-container">
+		          <div id="txt-messages">
+		            <div class="pull-left">
+		              <img src="assets/img/iphone/messages-arrow.jpg">
+		            </div>
+		            <div class="pull-left m-l-xs m-t-xxs" id="text-messages-result-container">
+		              <span id="text-messages-result" class="result">Messages</span>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col-md-4 col-xs-4 text-right" id="txt-name-container">
+		          <div id="txt-name">
+		            <span id="name-result" class="result">Your Fan</span>
+		          </div>
+		        </div>
+		        <div class="col-md-4 col-xs-4 text-right" id="text-contact-result-container">
+		          <div id="txt-contact">
+		            <span id="text-contact-result" class="result">Contact</span>
+		          </div>
+		        </div>
+					</div>
+
+					<!-- text messages  -->
+					<div id="msgs-wrapper">
+		        <ul id="msgs" class="ui-sortable">
+		          <li class="msg blue example-msg" style="display: inherit;">
+		            <div class="content">
+		            <p>
+		              Type a message below...
+		            </p>
+		            </div>
+		            <div class="sep"></div>
+		          </li>
+
+		          <li class="msg-timestamp" style="top: 845px; left: 551px; width: 383px;">
+								<!-- update with current time + N minutes -->
+								<div class="content"><p>Today 8:32 AM</p></div>
+								<div class="sep"></div>
+							</li>
+							<li class="msg grey" style="top: 870px; left: 570px; width: 250px;">
+								<div class="content"><p>thanks, listening now!</p></div>
+								<div class="sep"></div>
+							</li>
+						</ul>
+		    	</div>
+
+					<!-- input  -->
+		      <div id="msgs-bottom">
+		        <div id="text-textmessage-result">
+		        	<textarea type="text" placeholder="Start typing here..." class="input-msg" style="resize: none; outline:none; box-shadow:none;" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+		        </div>
+		        <div id="text-send-result">Send</div>
+		      </div>
+	      </div>
+	    </div>
+	    <div id="bottom"></div>
+		</div>
+	</div>
+</body>
+<script>
+	$(function() {
+		var defaultMessage = $('.example-msg').find('p').text();
+
+		$('textarea.input-msg').keyup(updatePreview);
+
+		function updatePreview() {
+			var textMessage = $(this).val();
+			var demo = $('.msg.blue.example-msg').find('p');
+
+			if (textMessage.length > 0) {
+				demo.text(textMessage);
+				$('#text-send-result').addClass('sendable');
+			}
+			else {
+				demo.text(defaultMessage);
+				$('#text-send-result').removeClass('sendable');
+			}
+		}
+	})
+</script>
+</html>
