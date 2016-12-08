@@ -1,8 +1,16 @@
 ## imessage simulator
-this is "inspired" by an ad-ridden imessage generator i found online.
+this project is "inspired" by an ad-ridden imessage generator i found online.
 
-it's a UI component for letting users type simulated text messages into a compose window, that
-is then reflected live on the screen, inside an imessage.
+imessage simulator is a UI component that lets users superimpose text messages
+inside imessage bubbles.
 
-demo:
+**demo**
 ![iMessage Simulator](https://github.com/ryanckulp/imessage_simulator/raw/master/assets/imessage-simulator-demo.gif "iMessage Simulator")
+
+**how to help**
+
+* dynamic times (top nav = now, response stamp = N from now)
+* turn image urls into inline images
+* make URLs clickable / styled with underlines, etc
+* ability to open 'upload' modal if user clicks camera
+* touch cursor to simulate mobile navigation
